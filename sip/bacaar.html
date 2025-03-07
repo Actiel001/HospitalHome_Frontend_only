@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baca Artikel</title>   
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <style>
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f0f8ff; /* Latar belakang cerah */
+    color: #333; /* Warna teks */
+    height: 200vh; /* Membuat body dua kali tinggi viewport */
+    background-color: #e0f7fa;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #388e3c; /* Hijau gelap */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #4caf50; /* Hijau */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6; /* Jarak antar baris */
+    margin-bottom: 15px;
+}
+
+ul {
+    margin: 10px 0;
+    padding-left: 20px; /* Indentasi untuk list */
+}
+
+li {
+    margin-bottom: 5px; /* Jarak antar item list */
+}
+
+.container {
+    max-width: 1000px; /* Tambah lebar maksimum konten */
+    margin: auto; /* Pusatkan konten */
+    padding: 40px; /* Tambah padding untuk memberi ruang di dalam kontainer */
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1); /* Gradasi warna */
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #2c3e50; /* Latar belakang gelap */
+    color: #ecf0f1; /* Warna teks cerah */
+}
+
+a {
+    color: #388e3c; /* Hijau untuk tautan */
+    text-decoration: none; /* Menghapus garis bawah */
+}
+
+a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+.container-ar {
+            padding: 20px;
+        }
+        
+        .card {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            max-width: 300px; 
+            margin: auto; /* Pusatkan kartu */
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover; /* Agar gambar tetap proporsional */
+        }
+
+        .card:active {
+            transform: translateY(-5px); /* Geser kartu ke atas */
+            transition: transform 0.1s ease; /* Animasi geser */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Memperbesar kartu saat hover */
+            transition: transform 0.2s ease; /* halus */
+        }
+
+footer {
+    position: relative;
+    overflow: hidden;
+    padding: 10px; /* Kurangi padding */
+    text-align: center;
+    margin-top: 0; /* Hilangkan margin atas */
+    background-color: #2c3e50; /* Latar belakang gelap */
+    color: #ecf0f1; /* Warna teks cerah */
+    width: 100%;
+}
+
+.footer-wave {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 300%; /* Lebar lebih besar untuk ombak lebih lebar */
+    height: 100%; /* Tinggi sama dengan footer */
+    background-image: radial-gradient(circle, rgba(0, 255, 128, 0.3) 0%, rgba(0, 128, 0, 0) 80%); /* Mengubah opasitas */
+    animation: wave-animation 10s linear infinite; /* Animasi gelombang lebih halus */
+    transform: translateX(-50%); /* Pusatkan gelombang */
+    filter: blur(10px); /* Blur untuk efek halus */
+    opacity: 0.8; /* Opasitas untuk efek lebih lembut */
+    z-index: 0; /* Agar berada di belakang konten */
+}
+
+@keyframes wave-animation {
+    0% {
+        background-position: 0 0; /* Posisi awal */
+    }
+    100% {
+        background-position: 200% 200%; /* Posisi akhir, lebih jauh untuk gerakan halus */
+    }
+}
+
+.whatsapp-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 25px; /* Mengurangi padding */
+    font-size: 14px; /* Mengurangi ukuran font */
+    background-color: #25D366; /* Warna tombol WA */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; /* Efek transisi */
+    position: relative; /* Agar tombol tetap di atas */
+    z-index: 1; /* Agar tombol berada di atas efek */
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Warna saat hover */
+    transform: scale(1.05); /* Memperbesar sedikit saat hover */
+    text-decoration: none;
+    color: white;
+}
+
+.whatsapp-button:active {
+    animation: pulse-animation 0.5s; /* Animasi saat diklik */
+    text-decoration: none;
+    color: white;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1); /* Ukuran normal */
+    }
+    50% {
+        transform: scale(1.1); /* Membesar sedikit */
+    }
+    100% {
+        transform: scale(1); /* Kembali ke ukuran normal */
+    }
+}
+
+.footer-content {
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    align-items: center; /* Memastikan konten vertikal tengah */
+    color: #ecf0f1; /* Warna teks cerah */
+}
+
+
+.footer-image {
+    width: 100px; /* Atur lebar gambar sesuai kebutuhan */
+    height: auto; /* Biarkan tinggi otomatis untuk menjaga proporsi */
+    margin-right: 20px; /* Jarak antara gambar dan konten */
+    animation: glow 1.5s infinite alternate; /* Efek nyala */
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    }
+    100% {
+        filter: drop-shadow(0 0 15px rgba(0, 255, 0, 1));
+    }
+}
+
+.contact-us p {
+    text-align: left; /* Mengatur teks menjadi rata kiri */
+    margin: 5px 0; /* Mengatur margin agar lebih rapi */
+}
+
+.contact-us h3 {
+    text-align: left; /* Mengatur h3 menjadi rata kiri */
+    margin: 10px 0; /* Mengatur margin agar lebih rapi */
+}
+
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pola Hidup Sehat: Kunci Menuju Kesehatan Optimal</h1>
+
+        <h2>Pendahuluan</h2>
+        <p>Pola hidup sehat adalah landasan penting untuk mencapai kesehatan yang baik dan meningkatkan kualitas hidup. Dalam dunia yang semakin sibuk ini, penting untuk menerapkan kebiasaan sehat agar tubuh tetap bugar dan berfungsi optimal.</p>
+
+        <h2>Nutrisi Seimbang</h2>
+        <p>Nutrisi yang tepat adalah kunci utama dalam menjaga kesehatan. Pola makan yang seimbang harus mencakup:</p>
+        <ul>
+            <li><strong>Karbohidrat</strong>: Sumber energi utama. Pilihlah karbohidrat kompleks seperti nasi merah dan sayuran.</li>
+            <li><strong>Protein</strong>: Diperlukan untuk membangun dan memperbaiki jaringan. Sumber protein yang baik meliputi daging tanpa lemak, ikan, telur, dan kacang-kacangan.</li>
+            <li><strong>Lemak Sehat</strong>: Lemak tak jenuh dari minyak zaitun dan alpukat dapat membantu menjaga kesehatan jantung.</li>
+            <li><strong>Serat</strong>: Membantu pencernaan dan mengontrol berat badan. Dapat ditemukan dalam buah, sayur, dan biji-bijian.</li>
+        </ul>
+
+        <h2>Rutin Berolahraga</h2>
+        <p>Aktivitas fisik yang teratur sangat penting untuk kesehatan secara keseluruhan. Beberapa manfaat olahraga antara lain:</p>
+        <ul>
+            <li>Meningkatkan kesehatan jantung.</li>
+            <li>Mengurangi risiko penyakit kronis.</li>
+            <li>Meningkatkan kesehatan mental.</li>
+        </ul>
+        <p>Disarankan untuk melakukan olahraga minimal 150 menit per minggu.</p>
+
+        <h2>Cukup Tidur</h2>
+        <p>Tidur yang cukup dan berkualitas adalah bagian penting dari pola hidup sehat. Tidur yang kurang dapat menyebabkan gangguan kesehatan. Usahakan untuk tidur 7-9 jam setiap malam dengan rutinitas yang konsisten.</p>
+
+        <h2>Mengelola Stres</h2>
+        <p>Stres yang tidak terkelola dapat mempengaruhi kesehatan fisik dan mental. Beberapa cara efektif untuk mengelola stres meliputi:</p>
+        <ul>
+            <li>Meditasi untuk menenangkan pikiran.</li>
+            <li>Olahraga sebagai pelarian yang baik dari stres.</li>
+            <li>Berbicara dengan teman untuk dukungan sosial.</li>
+        </ul>
+
+        <h2>Menghindari Kebiasaan Buruk</h2>
+        <p>Menghindari kebiasaan buruk juga merupakan bagian dari pola hidup sehat. Beberapa hal yang perlu diperhatikan:</p>
+        <ul>
+            <li>Merokok dapat menyebabkan berbagai penyakit serius.</li>
+            <li>Konsumsi alkohol berlebihan dapat merusak kesehatan.</li>
+            <li>Makanan cepat saji mengandung banyak gula dan lemak tidak sehat.</li>
+        </ul>
+
+        <h2>Kesimpulan</h2>
+        <p>Menerapkan pola hidup sehat adalah investasi terbaik untuk masa depan. Dengan memperhatikan nutrisi, berolahraga secara teratur, cukup tidur, mengelola stres, dan menjauhi kebiasaan buruk, kita dapat mencapai kesehatan yang optimal. Mulailah dengan langkah kecil dan bertahap.</p>
+   <br>    <div class="actions">
+    <button id="like-button">👍 Like</button>
+    <span id="like-count">0</span>
+</div> 
+    </div>
+
+    
+
+<section class="container-fluid" id="ak">
+    <br>  <h2 class="text-center mb-4">Artikel Kesehatan Lainnya</h2>
+      <div class="container-ar">
+          <div class="row">
+              <!-- Kartu yang sudah ada -->
+              <div class="col-md-3 mb-4">
+                  <div class="card">
+                      <img src="aset/y.jpg" class="card-img-top" alt="Artikel">
+                      <div class="card-body">
+                          <h5 class="card-title">Pola Hidup Sehat di Zaman yang Sehat dan Modern</h5>
+                          <p class="card-text">Mengetahui pola hidup sehat yang benar.</p>
+                          <p><span>19000 views</span></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="card">
+                    <img src="aset/y.jpg" class="card-img-top" alt="Artikel">
+                    <div class="card-body">
+                        <h5 class="card-title">Pola Hidup Sehat di Zaman yang Sehat dan Modern</h5>
+                        <p class="card-text">Mengetahui pola hidup sehat yang benar.</p>
+                        <p><span>19000 views</span></p>
+                    </div>
+                </div>
+            </div>
+              <div class="col-md-3 mb-4">
+                  <div class="card">
+                      <img src="aset/y.jpg" class="card-img-top" alt="Artikel">
+                      <div class="card-body">
+                          <h5 class="card-title">Tidak bisa berhenti memikirkan organ tubuh? Kelainan Berpikir</h5>
+                          <p class="card-text">Terjadi karena over fokus??</p>
+                          <p><span>15000 views</span></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                  <div class="card">
+                      <img src="aset/y.jpg" class="card-img-top" alt="Artikel">
+                      <div class="card-body">
+                          <h5 class="card-title">Olahraga Adalah Kunci Hidup Lama</h5>
+                          <p class="card-text">Deskripsi singkat artikel kesehatan 17.</p>
+                          <p><span>33000 views</span></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <footer>
+      <div class="footer-wave"></div>
+      <div class="footer-content">
+          <img src="aset/logo.png" alt="Gambar" class="footer-image">
+          <div class="text-content">
+              <div class="contact-us">
+                  <h3>Kontak Kami</h3>
+                  <p>Alamat: JL....... Wonosobo</p>
+                  <p>Nomor: 021-001-098-12</p>
+                  <p>Email: Medismedia@gmail.com</p>
+                  <a href="https://wa.me/088220283974" class="whatsapp-button">Hubungi kami via WA</a>
+              </div>
+          </div>
+          <b><p>"Artikel terbaru akan segera ditambahkan! Dapatkan informasi terbaru dan terpercaya tentang kesehatan dari kami. Untuk kebutuhan pelayanan kesehatan yang optimal, percayakan pada Rumah Sakit Islam Universe, di mana kami berkomitmen untuk menyediakan konten berkualitas demi kesehatan Anda."</p></b>
+  
+          </div>
+  
+  </footer>
+
+<script>
+
+let likeCount = 0;
+
+document.getElementById("like-button").addEventListener("click", function() {
+    likeCount++;
+    document.getElementById("like-count").innerText = likeCount;
+});
+
+document.getElementById("comment-button").addEventListener("click", function() {
+    const commentInput = document.getElementById("comment-input");
+    const commentList = document.getElementById("comment-list");
+    
+    if (commentInput.value) {
+        const li = document.createElement("li");
+        li.textContent = commentInput.value;
+        commentList.appendChild(li);
+        commentInput.value = ""; // Clear input
+    }
+});
+
+</script>
+</body>
+</html>
